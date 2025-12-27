@@ -1,0 +1,35 @@
+<app-navbar></app-navbar>
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">Available Plans</h2>
+  <div class="alert alert-info" *ngIf="userAge">
+    Showing prices tailored for Age: <strong>{{userAge}}</strong>
+  </div>
+  
+  <div *ngIf="plans.length === 0" class="alert alert-warning mt-3">
+    No insurance plans found matching your criteria.
+  </div>
+  <!-- <div>
+    <p>{{this.plans}}</p>
+  </div> -->
+
+  <div class="row" *ngIf="plans.length > 0">
+    <ng-container *ngFor="let plan of plans">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-header bg-dark text-white text-center">
+            <h4>{{plan.planName}}</h4>
+          </div>
+          <div class="card-body">
+            <p class="card-text">{{plan.description}}</p>
+            <hr>
+            <h5 class="text-primary text-center">Premium: ₹{{plan.finalAmount}}/year</h5>
+            <p class="text-center text-muted">Validity: {{plan.validity}} Years</p>
+          </div>
+          <div class="card-footer bg-white border-0 text-center pb-3">
+            <button class="btn btn-success w-100" (click)="buyPlan(plan.planId)">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

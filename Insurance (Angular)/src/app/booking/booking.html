@@ -1,0 +1,74 @@
+<div class="container mt-4 mb-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header bg-success text-white">
+          <h3>Confirm Purchase</h3>
+        </div>
+        <div class="card-body">
+          <div *ngIf="selectedPlan" class="alert alert-secondary">
+            <strong>Plan:</strong> {{selectedPlan.planName}} <br>
+            <strong>Total Premium:</strong> ₹{{premiumAmt}}
+          </div>
+
+          <form [formGroup]="bookingForm" (ngSubmit)="confirmBooking()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Full Name</label>
+                <input type="text" class="form-control" formControlName="name">
+                <small class="text-danger" *ngIf="bookingForm.get('name')?.touched && bookingForm.get('name')?.invalid">Name is required.</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Age</label>
+                <input type="number" class="form-control" formControlName="age" readonly>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Email</label>
+                <input type="email" class="form-control" formControlName="email">
+                <small class="text-danger" *ngIf="bookingForm.get('email')?.touched && bookingForm.get('email')?.invalid">Valid email required.</small>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label>Phone (10 digits)</label>
+                <input type="text" class="form-control" formControlName="phone">
+                <small class="text-danger" *ngIf="bookingForm.get('phone')?.touched && bookingForm.get('phone')?.invalid">Enter 10 digit number.</small>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label>City</label>
+              <input type="text" class="form-control" formControlName="city">
+            </div>
+
+            <h5 class="mt-4">Payment Details</h5>
+            <div class="mb-3">
+              <label>Mode</label>
+              <select class="form-select" formControlName="paymentMode">
+                <option value="credit card">Credit Card</option>
+                <option value="debit card">Debit Card</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label>Card Number (16 Digits)</label>
+              <input type="text" class="form-control" formControlName="cardNumber" placeholder="1234123412341234">
+              <small class="text-danger" *ngIf="bookingForm.get('cardNumber')?.touched && bookingForm.get('cardNumber')?.invalid">Invalid Card Number</small>
+            </div>
+
+            <div class="mb-3">
+              <label>Frequency</label>
+              <select class="form-select" formControlName="paymentFreq">
+                <option value="yearly">Yearly</option>
+                <option value="half-yearly">Half Yearly</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-success w-100 btn-lg" [disabled]="bookingForm.invalid">Pay & Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

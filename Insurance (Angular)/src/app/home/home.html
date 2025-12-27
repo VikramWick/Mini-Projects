@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<div class="container text-center mt-5">
+  <div class="p-5 mb-4 bg-light rounded-3 shadow">
+    <!-- <img src="https://cdn.pixabay.com/photo/2022/05/23/11/26/tree-7215935_1280.jpg" alt="Raindrops Insurance Logo" class="mb-4" style="height: 80px; width: auto;"> -->
+    <!-- <img src="/assets/images/logo.png" alt="Raindrops Insurance Logo" class="mb-4" style="height: 80px; width: auto;"> -->
+    <h1 class="display-5 fw-bold">Secure Your Future Today</h1>
+    <p class="col-md-8 fs-4 mx-auto">Join Raindrops Insurance for comprehensive health coverage.</p>
+    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#infoModal">
+      Get a Quote
+    </button>
+  </div>
+</div>
+
+<div class="modal fade" id="infoModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Help us understand you</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="detailsForm">
+          <div class="mb-3">
+            <label>Age</label>
+            <input type="number" class="form-control" formControlName="age">
+            <small class="text-danger" *ngIf="detailsForm.get('age')?.invalid && detailsForm.get('age')?.touched">
+              Age must be between 18 and 100.
+            </small>
+          </div>
+          <div class="mb-3">
+            <label>Annual Salary</label>
+            <input type="number" class="form-control" formControlName="salary">
+          </div>
+          <div class="mb-3">
+            <label>Existing Health Conditions</label>
+            <select class="form-select" formControlName="healthCondition">
+              <option value="none">None</option>
+              <option value="diabetes">Diabetes</option>
+              <option value="bp">Blood Pressure</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" 
+                [disabled]="detailsForm.invalid" 
+                (click)="onSubmit()" 
+                data-bs-dismiss="modal">View Plans</button>
+      </div>
+    </div>
+  </div>
+</div>

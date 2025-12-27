@@ -1,0 +1,105 @@
+{
+  "plans": [
+    {
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "description": "Safeguards you from unforeseen circumstances. Emergency services and specialist consultation included.",
+      "baseAmt": 2500,
+      "validity": 15,
+      "id": "511c"
+    },
+    {
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "description": "Our best selling plan. Facilities like Air Ambulance and Buy Now Pay Later.",
+      "baseAmt": 3000,
+      "validity": 30,
+      "id": "d407"
+    },
+    {
+      "planId": 3,
+      "planName": "Senior Shield",
+      "description": "Dedicated coverage for citizens above 60 years with regular health checkups.",
+      "baseAmt": 4500,
+      "validity": 15,
+      "id": "e6e4"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "c088",
+      "name": "vikram",
+      "city": "banglore",
+      "phone": "9876543210",
+      "email": "vikram@email.com",
+      "age": 35,
+      "paymentMode": "credit card",
+      "cardNumber": "1234567899876543",
+      "paymentFreq": "yearly",
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "premiumAmt": 3000,
+      "validity": 15
+    },
+    {
+      "id": "de89",
+      "name": "Santosh",
+      "city": "Narsaraopet",
+      "phone": "9876543210",
+      "email": "santosh@email.com",
+      "age": 21,
+      "paymentMode": "credit card",
+      "cardNumber": "1234123412341234",
+      "paymentFreq": "half-yearly",
+      "planId": 2,
+      "planName": "Good Health Plan",
+      "premiumAmt": 3000,
+      "validity": 30
+    },
+    {
+      "id": "d5a4",
+      "name": "santosh b",
+      "city": "bengaluru",
+      "phone": "2344590456",
+      "email": "vikram@email.com",
+      "age": 45,
+      "paymentMode": "debit card",
+      "cardNumber": "1234567891234567",
+      "paymentFreq": "half-yearly",
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "premiumAmt": 3000,
+      "validity": 15
+    },
+    {
+      "id": "99cc",
+      "name": "santosh b",
+      "city": "bengaluru",
+      "phone": "2344590456",
+      "email": "vikram@email.com",
+      "age": 65,
+      "paymentMode": "credit card",
+      "cardNumber": "1234567891234567",
+      "paymentFreq": "yearly",
+      "planId": 3,
+      "planName": "Senior Shield",
+      "premiumAmt": 6750,
+      "validity": 15
+    },
+    {
+      "id": "4d3d",
+      "name": "daiveek",
+      "city": "bangalore",
+      "phone": "9876543210",
+      "email": "daiveek@email.com",
+      "age": 63,
+      "paymentMode": "credit card",
+      "cardNumber": "1234567899876543",
+      "paymentFreq": "yearly",
+      "planId": 1,
+      "planName": "Care Life Plan",
+      "premiumAmt": 3750,
+      "validity": 15
+    }
+  ]
+}
